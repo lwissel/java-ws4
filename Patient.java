@@ -14,11 +14,21 @@ public class Patient {
   private int dateOfBirth; // expect format ddmmyyyy
   private char gender; // only allow M or F
 
-  // constructor
+  /**
+   * Full Constructor
+   *
+   * @param name patient name
+   * @param dateOfBirth in format ddmmyyyy
+   * @param gender only allowing 'M' or 'F'
+   */
   public Patient(String name, int dateOfBirth, char gender) {
     this.name = name;
     this.dateOfBirth = dateOfBirth;
+    validateAndSetGender(gender);
     
+  }
+
+  private void validateAndSetGender(char gender) {
     // throw expection if gender is not M or F
     if (gender == 'M' || gender == 'F') {
       this.gender = gender;
@@ -48,13 +58,7 @@ public class Patient {
     this.dateOfBirth = dateOfBirth;
   }
   public void setGender(char gender) {
-    // throw expection if gender is not M or F
-    if (gender == 'M' || gender == 'F') {
-      this.gender = gender;
-    }
-    else {
-      throw new IllegalArgumentException("In Setter: Gender is not M or F but was: " + gender);
-    }
+    validateAndSetGender(gender);
   }
 
   // toString
@@ -76,5 +80,17 @@ public class Patient {
   public static void main(String[] args) {
     Patient p1 = new Patient("Lennart", 24031990, 'M');
     System.out.println(p1.toString());
+
+    p1.setName("Wissel");
+    System.out.println(p1.toString());
+
+    p1.setName("Julia");
+    p1.setDateOfBirth(17071989);
+    p1.setGender('F');
+    System.out.println(p1.toString());
+
+    p1.setGender('m');
+
+    Patient p2 = new Patient("Lennart", 123456, 'r');
   }
 }
