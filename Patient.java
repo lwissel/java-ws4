@@ -28,6 +28,7 @@ public class Patient {
     
   }
 
+  // Exception throwing for the gender field
   private void validateAndSetGender(char gender) {
     // throw expection if gender is not M or F
     if (gender == 'M' || gender == 'F') {
@@ -68,6 +69,7 @@ public class Patient {
 
   // equals
   public boolean equals(Patient p) {
+    if (p == null) { return false; }
     if ( (p.getName().equals(this.name)) && (p.getDateOfBirth() == this.dateOfBirth) && (p.getGender() == this.gender)) {
       return true;
     }
