@@ -35,7 +35,7 @@ public class Patient {
       this.gender = gender;
     }
     else {
-      throw new IllegalArgumentException("In Constructor: Gender is not M or F but was: " + gender);
+      throw new IllegalArgumentException("Gender is not M or F but was: " + gender);
     }
   }
 
