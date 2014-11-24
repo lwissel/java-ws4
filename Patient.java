@@ -32,4 +32,15 @@ public class Patient {
   public char getGender() {
     return this.gender;
   }
+
+  // setters
+  public void setName(String name) {
+    this.name = name;
+  }
+  public void setDateOfBirth(int dateOfBirth) {
+    this.dateOfBirth = dateOfBirth;
+  }
+  public void setGender(char gender) {
+    this.gender = gender;
+  }
 }
