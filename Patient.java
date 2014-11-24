@@ -43,4 +43,19 @@ public class Patient {
   public void setGender(char gender) {
     this.gender = gender;
   }
+
+  // toString
+  public String toString() {
+    return this.name + " " + this.dateOfBirth + " " + this.gender;
+  }
+
+  // equals
+  public boolean equals(Patient p) {
+    if ( (p.getName().equals(this.name)) && (p.getDateOfBirth() == this.dateOfBirth) && (p.getGender() == this.gender)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }
