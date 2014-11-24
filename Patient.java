@@ -18,7 +18,14 @@ public class Patient {
   public Patient(String name, int dateOfBirth, char gender) {
     this.name = name;
     this.dateOfBirth = dateOfBirth;
-    this.gender = gender;
+    
+    // throw expection if gender is not M or F
+    if (gender == 'M' || gender == 'F') {
+      this.gender = gender;
+    }
+    else {
+      throw new IllegalArgumentException("In Constructor: Gender is not M or F but was: " + gender);
+    }
   }
 
 
@@ -41,7 +48,13 @@ public class Patient {
     this.dateOfBirth = dateOfBirth;
   }
   public void setGender(char gender) {
-    this.gender = gender;
+    // throw expection if gender is not M or F
+    if (gender == 'M' || gender == 'F') {
+      this.gender = gender;
+    }
+    else {
+      throw new IllegalArgumentException("In Setter: Gender is not M or F but was: " + gender);
+    }
   }
 
   // toString
@@ -57,5 +70,11 @@ public class Patient {
     else {
       return false;
     }
+  }
+
+
+  public static void main(String[] args) {
+    Patient p1 = new Patient("Lennart", 24031990, 'M');
+    System.out.println(p1.toString());
   }
 }
