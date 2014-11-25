@@ -1,8 +1,11 @@
+import java.util.*;
+
 public class Company implements Payable {
 
     private String name;
     private String url;
     private double revenue;
+    private ArrayList<Employee> employees;
 
     public Company(String name, String url, double revenue) {
         this.name = name;
@@ -18,8 +21,16 @@ public class Company implements Payable {
         return this.revenue;
     }
 
+    public ArrayList<Employee> getEmployees() {
+      return this.employees;
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setEmployees(ArrayList<Employee> employees) {
+      this.employees = employees;
     }
 
     public String toString() {
