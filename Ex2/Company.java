@@ -79,6 +79,15 @@ public class Company implements Payable {
         return sum;
     }
 
+    /** method to increase salaries of all employees
+     * @param rate the rate to increase
+     */
+    public void increaseSalaries(double rate) {
+      for (Employee e: this.employees) {
+        e.increaseSalary(rate);
+      }
+    }
+
     public static void main(String[] args) {
         
         Company c0 = new Company("a", "http://a", 2000000);
