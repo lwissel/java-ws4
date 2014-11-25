@@ -14,7 +14,6 @@ public class PatientExtended extends Patient {
    * @param name Name of patient
    * @param dateOfBirth birthday
    * @param gender M or F
-   * @return object PatientExtended
    */
   public PatientExtended(String name, int dateOfBirth, char gender) {
     super(name,dateOfBirth,gender);
@@ -80,11 +79,5 @@ public class PatientExtended extends Patient {
       if (p.getLastSeen().before(c)) { System.out.println(p); }
     }
   }
-
   
 }
-// set a date
-// Calendar calendar = new GregorianCalendar(2013,10,28);	
-// calendar.set(Calendar.YEAR, 2014);
-// calendar.set(Calendar.MONTH, 11);
-// calendar.set(Calendar.MINUTE, 33);

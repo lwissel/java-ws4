@@ -28,7 +28,9 @@ public class Patient {
     
   }
 
-  // Exception throwing for the gender field
+  /** Exception throwing for the gender field
+   * @param gender to test
+   */
   private void validateAndSetGender(char gender) {
     // throw expection if gender is not M or F
     if (gender == 'M' || gender == 'F') {
@@ -40,34 +42,55 @@ public class Patient {
   }
 
 
-  // getters
+  /** getters
+   * @return name
+   */
   public String getName() {
     return this.name;
   }
+  /**
+   * @return dateofbirth
+   */
   public int getDateOfBirth() {
     return this.dateOfBirth;
   }
+  /**
+   * @return gender
+   */
   public char getGender() {
     return this.gender;
   }
 
-  // setters
+  /** setters
+   * @param name new name
+   */
   public void setName(String name) {
     this.name = name;
   }
+  /**
+   * @param dateOfBirth new date
+   */
   public void setDateOfBirth(int dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
   }
+  /**
+   * @param gender new gender
+   */
   public void setGender(char gender) {
     validateAndSetGender(gender);
   }
 
-  // toString
+  /** toString
+   * @return string of field variable values
+   */
   public String toString() {
     return this.name + " " + this.dateOfBirth + " " + this.gender;
   }
 
-  // equals
+  /** equals
+   * @param p Patient to test against
+   * @return true if same patient
+   */
   public boolean equals(Patient p) {
     if (p == null) { return false; }
     if ( (p.getName().equals(this.name)) && (p.getDateOfBirth() == this.dateOfBirth) && (p.getGender() == this.gender)) {
