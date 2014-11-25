@@ -2,11 +2,11 @@
 public class SalariedEmployee extends Employee 
                   implements Holiday{
 	
-	private int salary;
+	private double salary;
 	private int daysOfHolidays;
 	
 	public SalariedEmployee(String firstName, String lastName, 
-			String nI, int dayOfPayment, int salary, 
+			String nI, int dayOfPayment, double salary, 
 			int daysOfHolidays) {
 		super(firstName, lastName, nI, dayOfPayment);
 		this.salary = salary;
@@ -23,7 +23,7 @@ public class SalariedEmployee extends Employee
 	}
 	
 	@Override
-	public int paymentAmount() {
+	public double paymentAmount() {
 		return salary;
 	}
 	

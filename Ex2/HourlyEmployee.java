@@ -5,11 +5,11 @@ public class HourlyEmployee extends Employee {
      * The getPaymentAmount just returns the hourly salary times the
      * numbers of hours worked.
      */
-    private int hourlySalary;
+    private double hourlySalary;
     private int workedHoursLastMonth;
     
     public HourlyEmployee(String first, String last, 
-			    String nIN, int dayOfPayment, int hourlySalary) {
+			    String nIN, int dayOfPayment, double hourlySalary) {
 	super(first, last, nIN, dayOfPayment);
 	this.hourlySalary    = hourlySalary;
 	workedHoursLastMonth = 0;
@@ -23,12 +23,12 @@ public class HourlyEmployee extends Employee {
 	return workedHoursLastMonth;
     }
 
-    public int getHourlySalary(){
+    public double getHourlySalary(){
 	return hourlySalary;
     }
 
 //    @Override
-    public int paymentAmount() {
+    public double paymentAmount() {
      	return getHourlySalary() * getWorkedHoursLastMonth();
     }
 

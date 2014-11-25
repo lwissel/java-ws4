@@ -51,7 +51,7 @@ public class Company implements Payable {
         }
     }
 
-	public int paymentAmount() {
+	public double paymentAmount() {
 		return (int) fee();
 	};
 

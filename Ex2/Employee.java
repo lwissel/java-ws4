@@ -42,7 +42,7 @@ public abstract class Employee implements Payable {
 		this.nI = nI;
 	}
 
-    public abstract int paymentAmount();
+    public abstract double paymentAmount();
     	
 	public int getDayOfPayment() {
 		return dayOfPayment;

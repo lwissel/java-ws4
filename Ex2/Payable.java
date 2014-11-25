@@ -3,7 +3,7 @@
  */
 
 public interface Payable {
-    int paymentAmount();
+    double paymentAmount();
     int dueDate();  // day of the month when the payment is due.
  
     /* The interface provides only skeleton of a class, that is, here,
