@@ -31,4 +31,9 @@ public class SalariedEmployee extends Employee
 	public int getDaysOfHolidays() {
 		return daysOfHolidays;
 	}
+
+  @Override
+  public void increaseSalary(double rate) {
+    this.salary = this.salary*(1.0+rate);
+  }
 }

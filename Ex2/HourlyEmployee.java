@@ -42,4 +42,9 @@ public class HourlyEmployee extends Employee {
 			     getWorkedHoursLastMonth(),
 			     paymentAmount());
     }
+
+    @Override
+    public void increaseSalary(double rate) {
+      this.hourlySalary = this.hourlySalary*(1.0+rate);
+    }
 }

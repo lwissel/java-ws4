@@ -44,6 +44,8 @@ public abstract class Employee implements Payable {
 
     public abstract double paymentAmount();
     	
+  public abstract void increaseSalary(double rate);
+
 	public int getDayOfPayment() {
 		return dayOfPayment;
 	}
