@@ -43,6 +43,9 @@ public class HourlyEmployee extends Employee {
 			     paymentAmount());
     }
 
+    /** increase the salary of this class
+     * @param rate is the rate to increase
+     */
     @Override
     public void increaseSalary(double rate) {
       this.hourlySalary = this.hourlySalary*(1.0+rate);

@@ -32,6 +32,9 @@ public class SalariedEmployee extends Employee
 		return daysOfHolidays;
 	}
 
+  /** increase the salary of this class
+   * @param rate is the rate to increase
+   */
   @Override
   public void increaseSalary(double rate) {
     this.salary = this.salary*(1.0+rate);
