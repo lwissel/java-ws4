@@ -1,5 +1,6 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
+import java.util.*;
 
 
 public class Ex1MyTest {
@@ -35,5 +36,14 @@ public class Ex1MyTest {
   @Test (expected = IllegalArgumentException.class)
     public void ex1Test4() {
       Patient p5 = new Patient("hans",13,'m');
+    }
+
+  // test dates
+  @Test
+    public void ex1Test5() {
+      Calendar c1= Calendar.getInstance();
+      Calendar c2 = Calendar.getInstance();
+      c2.set(Calendar.YEAR,2010);
+      assertTrue(c2.before(c1));
     }
 }
