@@ -26,11 +26,25 @@ public abstract class Property implements Rentable, Sellable {
    * @param payAmount is the money, value, rent whatever referring to the object
    */
   public Property(char type, int bedrooms, String description, String picture, double payAmount) {
+    validateAndSetType(type);
     this.type = type;
     this.bedrooms = bedrooms;
     this.description = description;
     this.picture = picture;
     this.payAmount = payAmount;
+  }
+
+  /** throw exception if type is not accepted
+   * @param type of r or s
+   */
+  private void validateAndSetType(char type) {
+    // throw expection if gender is not s or r
+    if (type == 's' || type == 'r') {
+      this.type = type;
+    }
+    else {
+      throw new IllegalArgumentException("type is not r or s but was: " + type);
+    }
   }
 
   /** GETTERS
@@ -68,7 +82,7 @@ public abstract class Property implements Rentable, Sellable {
    * @param type char type of object
    */
   protected void setType(char type) {
-    this.type = type;
+    validateAndSetType(type);
   }
   /**
    * @param bedrooms number of bedrooms
