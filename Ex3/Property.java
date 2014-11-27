@@ -94,4 +94,9 @@ public abstract class Property implements Rentable, Sellable {
   protected void setPayAmount(double payAmount) {
     this.payAmount = payAmount;
   }
+
+  @Override
+   public String toString() {
+     return "Type: " + this.type + ", Bedrooms: " + this.bedrooms + ", Price: " + this.payAmount + ", Text: " + this.description;
+   }
 }

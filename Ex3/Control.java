@@ -32,6 +32,9 @@ public class Control {
 
   // MISC#
 
+  /**
+   * sorting the list by overriding the given compare method for lists
+   */
   public void sortPropertiesByLowestPrice() {
     Collections.sort(this.properties, new Comparator<Property>() {
       @Override
