@@ -6,6 +6,7 @@
  * @version 27.11.2014
  */
 import java.util.*;
+import java.io.*;
 
 public class Control {
   private ArrayList<Property> properties;
@@ -42,5 +43,41 @@ public class Control {
         return Double.valueOf(p1.getPayAmount()).compareTo(Double.valueOf(p2.getPayAmount()));
       }
     });
+  }
+
+
+  /** generate html from within the control class
+   */
+  public void generateHTML() {
+    String htmlHeader = "<html><head><title>Properties</title></head><body>";
+    String htmlFooter = "</body></html>";
+    String htmlRent = htmlHeader;
+    String htmlSale = htmlHeader;
+    for (Property p: this.properties) {
+      if (p.getType() == 'r') {
+        htmlRent += p.toString();
+        htmlRent += "<a href=\"" + p.getPicture() + "\"></a><hr>";
+      }
+      if (p.getType() == 's') {
+        htmlSale += p.toString();
+        htmlSale += "<a href=\"" + p.getPicture() + "\"></a><hr>";
+      }
+    }
+    htmlRent += htmlFooter;
+    htmlSale += htmlFooter;
+
+    try {
+      BufferedWriter outRent = new BufferedWriter(new FileWriter("rent.html"));
+      BufferedWriter outSale = new BufferedWriter(new FileWriter("sale.html"));
+      outRent.write(htmlRent);
+      outSale.write(htmlSale);
+
+      outRent.close();
+      outSale.close();
+
+    } 
+    catch (IOException e) {
+      System.out.println("io file problem");
+    }
   }
 }
