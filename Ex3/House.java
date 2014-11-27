@@ -21,6 +21,9 @@ public class House extends Property {
     super(type, bedrooms, description, picture, payAmount);
   }
 
+  /**
+   * @return rent price
+   */
   @Override
     public double rentAmount() {
       if (this.getType() == 'r') {
@@ -31,6 +34,9 @@ public class House extends Property {
       }
     }
 
+  /**
+   * @return sell price
+   */
   @Override
     public double askingPrize() {
       if (this.getType() == 's') {

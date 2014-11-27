@@ -10,15 +10,34 @@ import java.util.*;
 public class Control {
   private ArrayList<Property> properties;
 
-  // constructor
+  /** full constructor
+   * @param properties list of properties
+   */
   public Control(ArrayList<Property> properties) {
     this.properties = properties;
   }
 
+  /** GETTER
+   * @return list of properties
+   */
   public ArrayList<Property> getProperties() {
     return this.properties;
   }
+  /** SETTER
+   * @param properties list
+   */
   public void setProperties(ArrayList<Property> properties) {
     this.properties = properties;
+  }
+
+  // MISC#
+
+  public void sortPropertiesByLowestPrice() {
+    Collections.sort(this.properties, new Comparator<Property>() {
+      @Override
+      public int compare(Property p1, Property p2) {
+        return Double.valueOf(p1.getPayAmount()).compareTo(Double.valueOf(p2.getPayAmount()));
+      }
+    });
   }
 }
