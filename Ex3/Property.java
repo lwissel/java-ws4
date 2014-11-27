@@ -119,6 +119,7 @@ public abstract class Property implements Rentable, Sellable {
 
   /** override equals
    * @return true if object properties are the same but not the image!
+   * @param p property to test against
    */
   public boolean equals(Property p) {
     if(p == null) {
