@@ -58,6 +58,10 @@ public class Ex3MyTest {
       public void ex3Test5() {
         assertEquals(a2.askingPrice(), 0,0.01);
       }
+    @Test (expected = IllegalArgumentException.class) // test for exception
+      public void ex3Test6() {
+        House defect = new House('e',100,"test","testfile.png",200.);
+      }
 
 
 }
