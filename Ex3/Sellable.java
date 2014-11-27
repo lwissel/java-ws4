@@ -8,5 +8,5 @@
 
 public interface Sellable {
   // proper value of the object
-  double askingPrize();
+  double askingPrice();
 }

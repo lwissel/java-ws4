@@ -9,7 +9,7 @@
 public abstract class Property implements Rentable, Sellable {
   // interface methods
   public abstract double rentAmount();
-  public abstract double askingPrize();
+  public abstract double askingPrice();
 
   // field variables for all properties
   private char type;  // limits us to all char types
@@ -95,8 +95,26 @@ public abstract class Property implements Rentable, Sellable {
     this.payAmount = payAmount;
   }
 
+  /** override toString
+   * @return some object information
+   */
   @Override
    public String toString() {
      return "Type: " + this.type + ", Bedrooms: " + this.bedrooms + ", Price: " + this.payAmount + ", Text: " + this.description;
    }
+
+  /** override equals
+   * @return true if object properties are the same but not the image!
+   */
+  public boolean equals(Property p) {
+    if(p == null) {
+      return false;
+    }
+    if (this.type == p.getType() && this.bedrooms == p.getBedrooms() && (Math.abs(this.payAmount - p.getPayAmount()) <= 0.001)) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
 }

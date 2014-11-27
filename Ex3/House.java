@@ -38,7 +38,7 @@ public class House extends Property {
    * @return sell price
    */
   @Override
-    public double askingPrize() {
+    public double askingPrice() {
       if (this.getType() == 's') {
         return this.getPayAmount();
       }
