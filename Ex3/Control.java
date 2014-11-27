@@ -49,7 +49,7 @@ public class Control {
   /** generate html from within the control class
    */
   public void generateHTML() {
-    String htmlHeader = "<html><head><title>Properties</title></head><body>";
+    String htmlHeader = "<!DOCTYPE html><html><head><title>Properties</title></head><body>";
     String htmlFooter = "</body></html>";
     String htmlRent = htmlHeader;
     String htmlSale = htmlHeader;

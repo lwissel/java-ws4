@@ -16,14 +16,8 @@ public class Runner {
     props.add(h1);
     props.add(a1);
 
-    System.out.println(props.get(1).toString());
-
     Control run = new Control(props);
     run.sortPropertiesByLowestPrice();
-    
-    System.out.println(run.getProperties().get(1).toString());
-
-
     run.generateHTML();
   }
 }
